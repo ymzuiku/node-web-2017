@@ -1,0 +1,18 @@
+{
+  "restartable": "w",
+  "delay":50,
+  "ignore": [
+    ".git",
+    ".svn",
+    "node_modules/**/node_modules",
+    "static/**",
+    "project/**"
+  ],
+  "verbose": false,
+  "execMap": {
+    "js": "node"
+  },
+  "watch": [],
+  "events":"crash",
+  "ext": "js json html"
+}

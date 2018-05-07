@@ -1,0 +1,54 @@
+* {
+  font-family: "SF Pro SC", "HanHei SC", "SF Pro Text", "Myriad Set Pro", "PingFang SC",
+    "Helvetica Neue", "Helvetic", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "Arial",
+    "Verdana", "sans-serif";
+}
+
+.topbar {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+.bottombar {
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+}
+
+canvas { max-width: 100%; }
+.phone-block {
+  display: none;
+  cursor: default;
+}
+.pc-block {
+  display: block;
+}
+
+.phone {
+  display: none;
+  cursor: default;
+}
+.pc {
+  display: flex;
+}
+
+@media screen and (max-width: 639px) {
+  .phone {
+    display: flex;
+  }
+  .pc {
+    display: none;
+    cursor: default;
+  }
+  .phone-block {
+    display: block;
+  }
+  .pc-block {
+    display: none;
+    cursor: default;
+  }
+  * {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-overflow-scrolling: touch;
+  }
+}

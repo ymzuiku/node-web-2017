@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  {{template "link"}}
+</head>
+
+<body>
+  <div class="gf">
+    <div class="h topbar h7 z5 c12" style="background-image: linear-gradient(180deg,#fff,#E9F6FF)">
+      <div class="c1"></div>
+      <div class="c3 asc h3d7" style="background-image: url(/liuhe/logo/logo.png); background-position: left"></div>
+      <div class="c7 v">
+        <div class="h h-70 ff ac fs10 jsa">
+        </div>
+        <div class="h jsa h-30 ff ae fw400 fs11" style="color:#666666;">
+          <a class='j_nav' href="/test.html" style="font-weight: 500;color:#666666; opacity:1;">首页</a>
+          <a class='j_nav' href="/test.html" style="color:#666666;opacity:0.7">产品与服务</a>
+          <a class='j_nav' href="/test.html" style="color:#666666;opacity:0.7">会员专区</a>
+          <a class='j_nav' href="/test.html" style="color:#666666;opacity:0.7">市场动态</a>
+          <a class='j_nav' href="/test.html" style="color:#666666;opacity:0.7">关于我们</a>
+        </div>
+        <div class=" h-30"></div>
+      </div>
+      <div class="c1"></div>
+    </div>
+    <div class="h topbar z1 h7d2" style="background-color:#035EAD"></div>
+    <div class="h h7d2"></div>
+    <div class="h30 bg1">adfjakf</div>
+    <div class="h30 bg1">adfjakf</div>
+    <div class="h30 bg1">adfjakf</div>
+  </div>
+  <script>
+
+    $(document).ready(function () {
+      var nav = $('.j_nav')
+      nav.vin(function (self) {
+        $(self).css('opacity', '1')
+      })
+      nav.vout(function (self) {
+        $(self).css('opacity', '0.8')
+      })
+    })
+  </script>
+</body>
+
+</html>

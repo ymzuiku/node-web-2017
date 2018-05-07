@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<!-- markdow css -->
+	<link href="https://cdn.bootcss.com/github-markdown-css/2.8.0/github-markdown.min.css" rel="stylesheet">
+	<link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		.box {
+  /*兼容flex*/
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  /*默认流式布局*/
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.v {
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+.h {
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+		.boxmargin {
+			margin: 40px;
+		}
+		.phone {
+			display: none;
+			cursor: default;
+		}
+		.pc {
+			display: block;
+		}
+		
+		@media screen and (max-width: 639px) {
+			.boxmargin {
+				margin: 10px;
+			}
+			.phone {
+				display: block;
+			}
+			.pc {
+				display: none;
+				cursor: default;
+			}
+			.phone-block {
+				display: block;
+			}
+			.pc-block {
+				display: none;
+				cursor: default;
+			}
+			* {
+				-webkit-tap-highlight-color: transparent;
+				-webkit-overflow-scrolling: touch;
+			}
+			*:not(input, textarea) {
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+		}
+	</style>
+
+	<title>{{ .DocTitle }}</title>
+</head>
+
+<body class="markdown-body boxmargin" >
+	<script>
+		var num = 0
+		var allTime = 0
+		var addAllTime = function(){
+			$("#alltime").html(allTime)
+			var onetime = (allTime / num).toFixed(2)
+			$("#onetime").html(onetime)
+		}
+	</script>
+	<h2><strong>{{ .DocTitle }}</strong></h2>
+	<ul>
+		{{range $i, $v := .Reads}}
+		<li>{{$v}}</li>
+		{{end}}
+	</ul>
+	
+	<h2></h2>
+	<p style="font-size: 12px; color:#DD877A">
+			All times: <span id="alltime">loading </span>ms; Average: <span id="onetime">loading </span>ms
+	</p>
+	{{range $i, $v := .Items}}
+	<h4> <span id="num{{$i}}"></span> {{if not $v.Data}}GET{{else}}POST{{end}}: <a href="{{ $.DocHost }}{{$v.URL}}">{{ $.DocHost }}{{ $v.URL }} </a></h4>
+	<script>
+		var obj = $("#num{{$i}}")
+		num = num + 1
+		obj.html(num)
+	</script>
+	<blockquote style="margin-bottom:50px">
+		{{if $v.Tip}}
+		<p><kbd>tip</kbd>&nbsp;&nbsp;&nbsp;{{ $v.Tip }}</p>
+		{{end}} 
+		<p><kbd>request</kbd>&nbsp;&nbsp;&nbsp;<code id="req{{$i}}"></code> <span style="font-size: 12px; margin-left:6px; color:#DD877A">time:</span>
+			<span style="font-size: 12px; color:#DD877A" id="time{{$i}}"></span>
+		</p>
+		{{if $v.Data}}
+		<p> <kbd>data</kbd>&nbsp;&nbsp;&nbsp;<code>{{ $v.Data }}</code>
+		</p>
+		<div class="box h">
+				<input id="input{{$i}}" type="text" placeholder="{{$v.Data}}" style="border-style:solid; -webkit-appearance: none;border-width: 1.5px;border-color: #D3D3D3;border-radius: 4px; outline:none; width:84%;height:33px; padding-left:8px" />
+				<button id="commit{{$i}}" class="btn btn-secondary btn-sm" style="margin-left: 2%;opacity: 1;width:14%;" >post</button>
+		</div>
+
+		{{end}}
+		{{if not $v.Data }}
+		<script>
+			var start = Date.now()
+			$.ajax({
+				type: "GET",
+				url: "{{ $v.URL }}",
+				contentType:"application/x-www-form-urlencoded",
+				complete: function (req) {
+					var obj = $("#req{{$i}}")
+					obj.html(req.responseText)
+					var long = Date.now() - self.start
+					$("#time{{$i}}").html(long + "ms")
+
+					allTime += long
+					addAllTime()
+				}
+			})
+		</script>
+		{{else}}
+		<script>
+			var start = Date.now()
+			$.ajax({
+				type: "POST",
+				url: "{{ $.DocHost }}{{ $v.URL }}",
+				data: "{{ $v.Data }}",
+				contentType:"application/x-www-form-urlencoded",
+				complete: function (req) {
+					var obj = $("#req{{$i}}")
+					obj.html(req.responseText)
+					var long = Date.now() - start
+					$("#time{{$i}}").html(long + "ms")
+
+					allTime += long
+					addAllTime()
+				}
+			})
+
+			var input = $("#input{{$i}}")
+			var obj = $("#commit{{$i}}")
+			var commit = function () {
+				var start = Date.now()
+				$.ajax({
+					type: "POST",
+					url: "{{ $.DocHost }}{{ $v.URL }}",
+					data: input.val(),
+					complete: function (req) {
+						var obj = $("#req{{$i}}")
+						obj.html(req.responseText)
+						var long = Date.now() - start
+						$("#time{{$i}}").html(long + "ms")
+
+						allTime += long
+						addAllTime()
+					}
+				})
+			}
+			input.keydown(function (e) {
+				if (e.keyCode == 13) {
+					//模拟点击登陆按钮，触发上面的 Click 事件
+					obj.click();
+				}
+			})
+			obj.click(commit)
+		</script>
+		{{end}}
+	</blockquote>
+	{{end}}
+</body>
+
+</html>

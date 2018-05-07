@@ -1,0 +1,36 @@
+{
+  "name": "thin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start2": "clear && dev=1 node app/app.js",
+    "start": "clear && dev=1 npm run nodemon app/app.js ",
+    "build": "pkill node && nohup node app/app.js &",
+    "nodemon": "nodemon",
+    "forever": "forever"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "browser-sync": "^2.18.13",
+    "compression": "^1.7.1",
+    "express": "^4.16.2",
+    "forever": "^0.15.3",
+    "helmet": "^3.9.0",
+    "log4js": "^2.3.12",
+    "marked": "^0.3.7",
+    "mongoose": "^4.13.5",
+    "nunjucks": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.0.39",
+    "@types/log4js": "^2.3.5",
+    "@types/mongoose": "^4.7.28",
+    "@types/nunjucks": "^3.0.0",
+    "nodemon": "^1.12.1"
+  }
+}

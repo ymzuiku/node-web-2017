@@ -1,0 +1,125 @@
+@import '~antd/dist/antd.css';
+
+body, html {
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+  -ms-text-size-adjust: 100% !important;
+  -webkit-text-size-adjust: 100% !important;
+  /* font-family: sans-serif; */
+}
+* {
+  font-family: 'SF Pro SC', 'HanHei SC', 'SF Pro Text', 'Myriad Set Pro', 'PingFang SC',
+    'sans-serif';
+}
+.checkbox {
+  /* transform:scale(1.5, 1.5); */
+  -webkit-appearance: checkbox;  
+}
+.radio {
+  /* transform:scale(1.5, 1.5); */
+  -webkit-appearance: radio;
+} 
+.ul {
+  padding: 20px;
+  padding-left: 54px;
+  list-style-type: disc;
+}
+.li {
+  margin-left: 40px;
+  margin-top: 20px;
+}
+
+
+:not(.uf) div {
+  box-sizing: border-box;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex-shrink: 0;
+  align-content: flex-start;
+  justify-content: flex-start;
+
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+}
+
+textarea {
+  outline: none;
+}
+
+input {
+  padding: 0;
+  border: 0px solid #000000;
+  outline: none;
+  background-color: rgba((0), 0, 0, 0);
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* @media only screen
+and (min-device-width : 320px)
+and (max-device-width : 1024px) {
+	select:focus,
+	textarea:focus,
+	input:focus {
+		font-size: 16px !important;
+	}
+} */
+
+.btn {
+  cursor: pointer;
+}
+
+.phone {
+  display: none;
+  cursor: default;
+  pointer-events: none;
+}
+.pc {
+  display: flex;
+  pointer-events: visible;
+}
+
+@media screen and (max-width: 639px) {
+  .phone {
+    display: flex;
+    pointer-events: visible;
+  }
+  .pc {
+    display: none;
+    cursor: default;
+    pointer-events: none;
+  }
+  * {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-overflow-scrolling: touch;
+  }
+  *:not(input, textarea) {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
+

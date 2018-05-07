@@ -1,0 +1,48 @@
+.book h1,h2,h3,h4,h5,h6 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+  font-weight: 400;
+}
+.book div {
+  width: 100%;
+}
+
+.book h2 {
+  color: #005BAB;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.book h3 {
+  color:#005BAB;
+  font-size: 1.08rem;
+  font-weight: 500;
+}
+.book img {
+  margin-left: auto;
+  width: 85%;
+  margin-left: 7.5%;
+}
+.book p {
+  font-size: 1.0rem;
+  font-weight: 400;
+}
+
+.book ul {
+  font-size: 0.95rem;
+  margin-left: 2rem;
+  font-weight: 400;
+}
+
+.book li {
+  margin-top: 0.3rem;
+}
+
+.book p {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+  margin-top: 0.8rem;
+}

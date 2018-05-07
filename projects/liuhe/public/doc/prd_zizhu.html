@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<!-- markdow css -->
+	<link href="https://cdn.bootcss.com/github-markdown-css/2.8.0/github-markdown.min.css" rel="stylesheet">
+	<link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		td {
+			min-width: 80px;
+		}
+		.box {
+			/*兼容flex*/
+			display: -webkit-box;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+			/*默认流式布局*/
+			-webkit-box-direction: normal;
+			-webkit-box-orient: vertical;
+			-moz-flex-direction: column;
+			-webkit-flex-direction: column;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.v {
+			-webkit-box-direction: normal;
+			-webkit-box-orient: vertical;
+			-moz-flex-direction: column;
+			-webkit-flex-direction: column;
+			flex-direction: column;
+		}
+
+		.h {
+			-webkit-box-direction: normal;
+			-webkit-box-orient: horizontal;
+			-moz-flex-direction: row;
+			-webkit-flex-direction: row;
+			flex-direction: row;
+		}
+
+		.boxmargin {
+			margin: 40px;
+		}
+
+		.phone {
+			display: none;
+			cursor: default;
+		}
+
+		.pc {
+			display: block;
+		}
+
+		@media screen and (max-width: 639px) {
+			.boxmargin {
+				margin: 15px;
+			}
+			.phone {
+				display: block;
+			}
+			.pc {
+				display: none;
+				cursor: default;
+			}
+			.phone-block {
+				display: block;
+			}
+			.pc-block {
+				display: none;
+				cursor: default;
+			}
+			* {
+				-webkit-tap-highlight-color: transparent;
+				-webkit-overflow-scrolling: touch;
+			}
+			*:not(input, textarea) {
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+		}
+	</style>
+
+	<title>六合官网需求文档</title>
+</head>
+
+<body class="markdown-body boxmargin">
+	<h1>自助系统修改 PRD文档</h1>
+	<blockquote><a href="/doc/prd_liuhe.html">六合官网 PRD文档</a></blockquote>
+
+	<blockquote>文档更新于: 2017年10月9日 14:00</blockquote>
+	<h2>产品概述</h2>
+	北京六合的官网展示、产品说明、功能引流至自助系统
+	
+	<h2>时间线</h2>
+	<ol>
+		<li>2017/9/19, 建立沟通</li>
+	</ol>
+
+	<h2>相关人员及时间节点</h2>
+	<table>
+		<tr>
+			<td>类目</td>
+			<td>执行人</td>
+			<td>工作内容</td>
+			<!-- <td>完成情况</td> -->
+			<td style="min-width: 110px" >开始时间</td>
+			<td style="min-width: 110px">结束时间</td>
+		</tr>
+		<tr>
+			<td>需求</td>
+			<td>王丽敏</td>
+			<td>网站需求设计</td>
+			<!-- <td>完成</td> -->
+			<td>2017/09/19</td>
+			<td>?</td>
+		</tr>
+			<td>开发</td>
+			<td>黄欢茂</td>
+			<td>自主系统修改</td>
+			<!-- <td>已做好相应式方案的技术选型, 等待设计输出</td> -->
+			<td>?</td>
+			<td>?</td>
+		</tr>
+		<tr>
+			<td>测试</td>
+			<td>?</td>
+			<td>页面测试</td>
+			<!-- <td>等待开发完成</td>			 -->
+			<td>?</td>
+			<td>?</td>
+		</tr>
+	</table>
+	<h2>需求说明</h2>
+	<h3>一期</h3>
+	需要设计及开发的页面
+	<h2>一期 详细进度</h2>
+	<h3>需求</h3>
+	<blockquote>预计人天: </blockquote>
+	<table>
+		<tr>
+			<td>编号</td>
+			<td>名称</td>
+			<td>完成时间</td>
+		</tr>
+		<tr>
+				<td>1</td>
+				<td>提出需求</td>
+				<td>?</td>
+		</tr>
+		
+	</table>
+	<h3>开发</h3>
+	<blockquote>预计人天: </blockquote>	
+	<table>
+			<tr>
+				<td>编号</td>
+				<td>名称</td>
+				<td>完成时间</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>?</td>
+          <td>?</td>
+      </tr>
+		</table>
+		<h3>测试</h3>
+		<blockquote>预计人天: 3</blockquote>	
+		<table>
+				<tr>
+					<td>编号</td>
+					<td>名称</td>
+					<td>完成时间</td>
+				</tr>
+				<tr>
+						<td>1</td>
+						<td>编写测试用例</td>
+						<td>?</td>
+				</tr>
+			</table>
+</body>
+
+</html>

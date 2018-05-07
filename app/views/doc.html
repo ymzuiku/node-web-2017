@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <link href="https://cdn.bootcss.com/github-markdown-css/2.8.0/github-markdown.min.css" rel="stylesheet">
+	<link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">  
+  <title>Apis</title>
+  <style>
+    .item {
+      margin: 20px;
+      margin-bottom: 15px;
+      max-width: 50%;
+    }
+    .left {
+      min-width: 200px;
+      color: #888;
+    }
+    h3 {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+
+</head>
+
+<body class="markdown-body boxmargin" >
+  <h1 style="margin: 10px" >{{title}}</h1>
+  <div  >
+    {% for item in list %}
+  <blockquote>
+    <div style="margin: 20px; margin-bottom: 15px;"  >
+      <h3 > <span>{{ item.num }}.</span> <kbd>{{ item.method }}</kbd>&nbsp;&nbsp;{{ item.title }} </h3>
+      {% if item.info %}
+      <div><span class="left">info: </span>{{ item.info }}</div>
+      {% endif %}
+      <div><span class="left">url: </span><a href="{{ host }}{{ prefix }}{{ item.url }}">{{ host }}{{ prefix }}{{ item.url }}</a></div>
+      {% if item.param %}
+      <div><span class="left">param: </span>{{item.param}}</div>
+      {% endif %}
+      <div><span class="left">back: </span>{{item.back}}</div>
+    </div>
+  </blockquote>
+    {% endfor %}
+  </div>
+</body>
+
+</html>

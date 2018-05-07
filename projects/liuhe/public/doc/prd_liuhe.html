@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<!-- markdow css -->
+	<link href="https://cdn.bootcss.com/github-markdown-css/2.8.0/github-markdown.min.css" rel="stylesheet">
+	<style>
+		embed {
+			width: 100%;
+			height: 100%;
+		}
+		.box {
+			/*兼容flex*/
+			display: -webkit-box;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+			/*默认流式布局*/
+			-webkit-box-direction: normal;
+			-webkit-box-orient: vertical;
+			-moz-flex-direction: column;
+			-webkit-flex-direction: column;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.v {
+			-webkit-box-direction: normal;
+			-webkit-box-orient: vertical;
+			-moz-flex-direction: column;
+			-webkit-flex-direction: column;
+			flex-direction: column;
+		}
+
+		.h {
+			-webkit-box-direction: normal;
+			-webkit-box-orient: horizontal;
+			-moz-flex-direction: row;
+			-webkit-flex-direction: row;
+			flex-direction: row;
+		}
+
+		.boxmargin {
+			margin: 40px;
+		}
+
+		.phone {
+			display: none;
+			cursor: default;
+		}
+
+		.pc {
+			display: block;
+		}
+
+		@media screen and (max-width: 639px) {
+			.boxmargin {
+				margin: 15px;
+			}
+			.phone {
+				display: block;
+			}
+			.pc {
+				display: none;
+				cursor: default;
+			}
+			.phone-block {
+				display: block;
+			}
+			.pc-block {
+				display: none;
+				cursor: default;
+			}
+			* {
+				-webkit-tap-highlight-color: transparent;
+				-webkit-overflow-scrolling: touch;
+			}
+			*:not(input, textarea) {
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+		}
+	</style>
+
+	<title>六合官网需求文档</title>
+</head>
+
+<body class="markdown-body boxmargin">
+	<h1>六合官网 PRD文档</h1>
+	<blockquote><a href="/doc/prd_zizhu.html">自助系统修改 PRD文档</a></blockquote>
+
+	<blockquote>文档更新于: 2017年10月9日 15:30</blockquote>
+	<h2>产品概述</h2>
+	北京六合的官网展示、产品说明、功能引流至自助系统
+	
+	<h2>时间线</h2>
+	<ol>
+		<li>2017/9/19, 建立沟通</li>
+		<li>2017/9/20, 设计师输出第一版首页设计稿</li>
+		<li>2017/9/25, 需求方进行设计评审</li>
+		<li>2017/9/27, 设计师输出第二版首页设计稿及产品中心设计稿</li>
+		<li>2017/10/09, 等待邹康和丽敏确定最终的官网首页设计</li>
+		<li>2017/10/09, 域名和服务器正在申请</li>
+	</ol>
+
+	<h2>项目范围</h2>
+	<h3>一期</h3>
+	<!-- 需要设计及开发的页面 -->
+	<ul>
+		<li>官网首页</li>
+		<li>产品与服务页面</li>
+		<ul>
+			<li>基因(SNP)分型</li>
+			<li>甲基化验证</li>
+			<li>基因表达验证</li>
+			<li>...等产品与服务列表</li>
+		</ul>
+		<li>关于我们页面</li>
+		<li>招聘信息</li>
+		<li>搜索功能</li>
+		<li>其他页面及功能均跳转到自助系统或华大官网</li>
+	</ul>
+	<h3>二期</h3>
+	<ul>
+			<li>移动端适配(如果时间允许，尽可能放到一期)</li>
+			<li>多语言版本</li>
+	</ul>
+
+	<h2>产品地图</h2>
+	<a href="/doc/liuhe.pdf">查看完整地图</a>
+	<embed src="./liuhe.pdf" type="application/pdf" width="100%" height="100%" >
+	<h2>相关人员及时间节点</h2>
+	<table>
+		<tr>
+			<td>类目</td>
+			<td>执行人</td>
+			<td>工作内容</td>
+			<!-- <td>完成情况</td> -->
+			<td >开始时间</td>
+			<td >结束时间</td>
+		</tr>
+		<tr>
+			<td>需求</td>
+			<td>王丽敏</td>
+			<td>网站需求设计</td>
+			<!-- <td>完成</td> -->
+			<td>2017/09/19</td>
+			<td>2017/09/19</td>
+		</tr>
+		<tr>
+				<td>项目</td>
+				<td>彭娣蓉</td>
+				<td>立项、项目管理</td>
+				<!-- <td>完成</td> -->
+				<td>2017/09/19</td>
+				<td>2017/10/31</td>
+			</tr>
+		<tr>
+			<td>文案</td>
+			<td>王丽敏</td>
+			<td>每个页面的文案及相关素材，多语言则需要提供多语言文案</td>
+			<!-- <td>已提供首页、产品说明中的质普SNP分型说明的资料</td> -->
+			<td>2017/09/20</td>
+			<td>2017/10/13</td>
+		</tr>
+		<tr>
+			<td>设计</td>
+			<td>邹康</td>
+			<td>网页设计及切图输出</td>
+			<!-- <td>网站首页处于评审阶段; 网站二级页面中的产品中心已设计完成，其余页面待设计</td> -->
+			<td>2017/09/20</td>
+			<td>2017/10/19</td>
+		</tr>
+		<tr>
+			<td>开发</td>
+			<td>梁柱</td>
+			<td>前端开发、部署</td>
+			<!-- <td>已做好相应式方案的技术选型, 等待设计输出</td> -->
+			<td>2017/10/11</td>
+			<td>2017/10/27</td>
+		</tr>
+		<tr>
+			<td>测试</td>
+			<td>胡勇</td>
+			<td>页面测试</td>
+			<!-- <td>等待开发完成</td>			 -->
+			<td>2017/10/27</td>
+			<td>2017/10/31</td>
+		</tr>
+		<tr>
+			<td>服务器</td>
+			<td>张楠炬</td>
+			<td>服务器选购、配置</td>
+			<!-- <td>正在和丽敏沟通服务器配置信息</td> -->
+			<td>2017/10/9</td>
+			<td>2017/10/11</td>
+		</tr>
+		<tr>
+			<td>域名</td>
+			<td>王丽敏</td>
+			<td>域名选购, 企业备案</td>
+			<!-- <td>域名已选购, 等待评审</td> -->
+			<td>2017/10/9</td>
+			<td>2017/10/20</td>
+		</tr>
+	</table>
+	<h2>一期 详细进度</h2>
+	<h3>文案</h3>
+	<blockquote>预计人天: </blockquote>
+	<table>
+		<tr>
+			<td>编号</td>
+			<td>名称</td>
+			<td>完成时间</td>
+		</tr>
+		<tr>
+				<td>1</td>
+				<td>首页文案</td>
+				<td>2017/09/18</td>
+		</tr>
+		<tr>
+				<td>2</td>
+				<td>产品中心-基因(SNP)分型(现在提供了部分文案；最终需要文章列表，及每篇文章的简介、交付指证、样品要求、常见问题)</td>
+				<td>2017/09/25</td>
+		</tr>
+		<tr>
+				<td>3</td>
+				<td>产品中心-甲基化验证(同上)</td>
+				<td>2017/10/13</td>
+		</tr>
+		<tr>
+				<td>4</td>
+				<td>产品中心-基因表达验证(同上)</td>
+				<td>2017/10/13</td>
+		</tr>
+		<tr>
+				<td>5</td>
+				<td>技术服务-...其余剩余文案(同上)</td>
+				<td>2017/10/13</td>
+		</tr>
+		<tr>
+				<td>6</td>
+				<td>关于我们-介绍</td>
+				<td>2017/10/13</td>
+		</tr>
+		<tr>
+				<td>7</td>
+				<td>关于我们-招聘信息</td>
+				<td>2017/10/13</td>
+		</tr>
+		<tr>
+				<td>8</td>
+				<td>搜索-关键字列表对应</td>
+				<td>2017/10/13</td>
+		</tr>
+		<tr>
+				<td>9</td>
+				<td>banner详情信息(如果有)</td>
+				<td>?</td>
+		</tr>
+	</table>
+	<h3>设计</h3>
+	<blockquote>预计人天: </blockquote>
+	<table>
+			<tr>
+				<td>编号</td>
+				<td>名称</td>
+				<td>完成时间</td>
+			</tr>
+			<tr>
+					<td>1</td>
+					<td>确定网站风格(以首页和一个二级页面，通过需求方评审为确定风格)</td>
+					<td>2017/10/11</td>
+			</tr>
+			<tr>
+					<td>2</td>
+					<td>首页</td>
+					<td>2017/10/11</td>
+			</tr>
+			<tr>
+					<td>3</td>
+					<td>产品中心页</td>
+					<td>2017/10/15</td>
+			</tr>
+			<tr>
+					<td>4</td>
+					<td>关于我们-介绍页</td>
+					<td>2017/10/19</td>
+			</tr>
+			<tr>
+					<td>5</td>
+					<td>关于我们-招聘信息页</td>
+					<td>2017/10/19</td>
+			</tr>
+			<tr>
+					<td>6</td>
+					<td>banner点击后的详情页</td>
+					<td>?</td>
+			</tr>
+			<tr>
+					<td>7</td>
+					<td>搜索结果页面</td>
+					<td>2017/10/19</td>
+			</tr>
+			<tr>
+					<td>8</td>
+					<td>特殊模块的移动端展现</td>
+					<td>2017/10/19</td>
+			</tr>
+			<tr>
+					<td>9</td>
+					<td>每个页面的切图，及素材提供</td>
+					<td>2017/10/19</td>
+			</tr>
+		</table>
+	<h3>开发</h3>
+	<blockquote>预计人天: 12</blockquote>	
+	<table>
+			<tr>
+				<td>编号</td>
+				<td>名称</td>
+				<td>完成时间</td>
+			</tr>
+			<tr>
+					<td>1</td>
+					<td>响应式开发框架选型</td>
+					<td>2017/09/31</td>
+			</tr>
+			<tr>
+					<td>2</td>
+					<td>顶部导航栏开发(适配移动端)</td>
+					<td>2017/10/13</td>
+			</tr>
+			<tr>
+					<td>3</td>
+					<td>首页的开发</td>
+					<td>2017/10/17</td>
+			</tr>
+			<tr>
+					<td>4</td>
+					<td>产品中心页(包括每个产品的介绍)的开发</td>
+					<td>2017/10/19</td>
+			</tr>
+			<tr>
+					<td>5</td>
+					<td>关于我们-介绍页的开发</td>
+					<td>2017/10/24</td>
+			</tr>
+			<tr>
+					<td>6</td>
+					<td>关于我们-招聘信息页的开发</td>
+					<td>2017/10/24</td>
+			</tr>
+			<tr>
+					<td>7</td>
+					<td>banner详情页开发(通用)</td>
+					<td>?</td>
+			</tr>
+			<tr>
+					<td>8</td>
+					<td>搜索功能开发</td>
+					<td>2017/10/24</td>
+			</tr>
+			<tr>
+					<td>9</td>
+					<td>搜索结果列表页面开发</td>
+					<td>2017/10/24</td>
+			</tr>
+			<tr>
+					<td>10</td>
+					<td>Golang静态服务器的开发及部署</td>
+					<td>2017/10/24</td>
+			</tr>
+		</table>
+		<h3>测试</h3>
+		<blockquote>预计人天: 3</blockquote>	
+		<table>
+				<tr>
+					<td>编号</td>
+					<td>名称</td>
+					<td>完成时间</td>
+				</tr>
+				<tr>
+						<td>1</td>
+						<td>每个页面的跳转测试</td>
+						<td>2017/10/31</td>
+				</tr>
+				<tr>
+						<td>2</td>
+						<td>PC、Mac 不同浏览器的兼容测试</td>
+						<td>2017/10/31</td>
+				</tr>
+				<tr>
+						<td>3</td>
+						<td>iOS 兼容测试</td>
+						<td>2017/10/31</td>
+				</tr>
+				<tr>
+						<td>4</td>
+						<td>Android 兼容测试</td>
+						<td>2017/10/31</td>
+				</tr>
+				<tr>
+						<td>5</td>
+						<td>页面并发访问测试</td>
+						<td>2017/10/31</td>
+				</tr>
+			</table>
+</body>
+
+</html>

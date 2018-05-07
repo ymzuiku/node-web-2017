@@ -1,0 +1,10 @@
+CACHE MANIFEST
+# version xx.xx.xx
+CACHE:
+img/temp/list.jpg
+
+NETWORK:
+index.html
+
+FALLBACK:
+/ 404.html
