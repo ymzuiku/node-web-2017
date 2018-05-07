@@ -1,6 +1,6 @@
 # 服务器端把端口起在4001
 
-> 2017年的node-web项目，如金丝带，个人简历，华大基因，csccp等项目
+> 2017年的node-web项目, 如金丝带, 个人简历, BGI, sccp等项目
 
 **访问网站: [http://workos.top:4001/](http://workos.top:4001/)**
 
